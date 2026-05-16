@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-archivo: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  /** Reference header palette: charcoal + warm cream */
+  --color-porten-charcoal: #1a1a1a;
+  --color-porten-cream: #dcdcd0;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --porten-charcoal: #1a1a1a;
+  --porten-cream: #dcdcd0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+::selection {
+  background: rgba(23, 23, 23, 0.12);
+  color: #0a0a0a;
+}
+
+iconify-icon {
+  vertical-align: -0.125em;
+}
+
+@layer base {
+  a,
+  button {
+    -webkit-tap-highlight-color: rgba(23, 23, 23, 0.06);
+  }
+}
+
+@keyframes porten-marquee {
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Main container - consistent width across site */
+.container-main {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-main {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
